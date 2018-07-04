@@ -1,0 +1,215 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: 'Roboto', sans-serif;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.nav-container{
+  background: transparent;
+  position: fixed;
+  width: 100vw;
+  padding: 20px;
+  font-family: 'Anton', sans-serif;
+  z-index: 11;
+}
+
+.nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 50px;
+}
+
+.nav > span{
+  margin-left: 50px;
+  border-top: 2px solid #fff;  
+  border-bottom: 2px solid #fff;
+  opacity: 0;
+}
+
+.nav > span > a{
+  color: #fff;
+  text-decoration: none;  
+}
+
+.navbar{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  margin-right: 15px;
+}
+
+.navbar li{
+  transition: .5s;
+  animation: 1s ease-out 0s 1 fadeIn;
+  text-align: center;
+  padding: 5px;
+}
+
+.navbar li:hover{
+  cursor: pointer;
+}
+
+.navbar li:hover a{
+  color: #13D6C9;  
+}
+
+.navbar li a{
+  text-decoration: none;
+  color: #fff;
+  letter-spacing: 2px;
+  line-height: 1em;
+}
+
+@keyframes dropInFromAbove {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+    color: transparent;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+    color: #fff;
+  }
+}
+
+@keyframes widen{
+  0%{
+    width:0%;
+  }
+  100%{
+    width: 100%;
+  }
+}
+
+@keyframes fadeIn{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
+.landing-wrapper{
+  font-family: 'Anton', sans-serif;  
+  height: 100vh;
+  background: #000;
+  position: relative;
+  
+}
+
+.landing-wrapper::before{
+  /* display:none; */
+  content:'';
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0);
+  opacity:0;
+  position: absolute;
+  /* z-index: 10; */
+}
+
+.landing-content{
+  height: 100vh;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.landing-content h1{
+  position: relative;
+  animation: 1s ease-out 0s 1 fadeIn;
+  font-size: 75px;
+  letter-spacing: 15px;
+  border-bottom: 10px solid #fff;
+  border-top: 10px solid #fff;
+  margin-right: -15px;
+  color: #fff;
+}
+
+.nospace{
+  letter-spacing: 0;
+}
+
+.border{
+  position: absolute;
+  width: 100%;
+  height:1px;
+  background-color: transparent;
+  bottom:0;
+  right: 0;
+  transition: 1s;
+}
+
+.border-color{
+  animation: 1s ease-out 0s 1 widen;
+  width: 100%;
+  height: 100%;
+  background-color:#13D6C9;
+  float: right;
+  transition: 1s ease;
+}
+
+#about, #portfolio, #contact{
+  height: 100vh
+}
+
+#about{
+  width: 40%;
+  position: absolute;
+  left: -40%;
+  background: #13D6C9;
+  z-index: 10;
+  top: 0;
+
+}
+
+#contact{
+  width: 40%;
+  position: absolute;
+  right: -40%;
+  background: #13D6C9;
+  z-index: 10;
+  top: 0;
+}
+
+.section-title{
+  padding-top: 150px;
+  text-align: center;
+  color: #000;
+}
+
+.side-section-title{
+  padding-top: 150px;
+  text-align: center;
+  color: #fff;
+}
+
+footer{
+  /* height: 60px; */
+  /* background: #222; */
+  /* position: relative; */
+}
+
+.backToTop{
+  /* display: none; */
+  width: 75px;
+  height: 75px;
+  position: fixed;
+  /* top: -25; */
+  /* right: 50; */
+  right: 50px;
+  bottom: 50px;
+  border-radius: 50%;
+  background: #000;
+  /* cursor: pointer; */
+  opacity: 0 ;
+}
